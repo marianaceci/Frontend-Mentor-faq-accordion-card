@@ -1,0 +1,224 @@
+:root{
+    --text-very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --text-soft-red: hsl(14, 88%, 65%);
+    
+    --bg-soft-violet: hsl(273, 75%, 66%);
+    --bg-soft-blue: hsl(240, 73%, 65%);
+
+    --text-very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --text-dark-grayish-blue: hsl(240, 6%, 50%);
+
+    --div-light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif; /*Weights: 400, 700*/
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));  
+    height: 100vh;    
+}
+
+.main-container {    
+    max-height: inherit;
+    width: 100%;    
+    position: relative;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container{
+    width: 330px;
+    height: 500px;
+    background-color: white;
+    border-radius: 25px;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -5px;
+    padding: 0 25px 30px 25px;
+    box-shadow: 0 20px 70px 0 hsl(240, 37%, 39%);
+}
+
+.img-desk{
+    display: none;
+}
+
+.image-mob{
+    transform: scale(0.8);
+    position: relative;
+    top: -125px;
+}
+
+h1{
+    font-weight: 700;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+    top: -90px;
+}
+
+#accordion{
+    position: relative;
+    top: -80px;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-button{
+    font-size: 0.85rem;
+    border: none;
+    padding: 1rem 0;
+}
+
+.accordion-button:focus{
+    border: none;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed){
+    color: black;
+    font-weight: 700;
+    background-color: white;
+    box-shadow: 0 0 white;
+}
+
+.accordion-button::after{
+    content: '';
+    background-image: url(./images/icon-arrow-down.svg);
+    background-size: 0.75rem;
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.accordion-button:not(.collapsed)::after{
+    background-image: url(./images/icon-arrow-down.svg);
+    transform: rotate(-180deg);
+}
+
+.card-body {
+    font-size: 0.8rem;
+    color: var(--text-dark-grayish-blue);
+    padding: 0; 
+}
+
+.accordion-item{
+    border: none;
+    border-bottom: 1px solid var(--div-light-grayish-blue);
+}
+
+p{
+    padding-bottom: 15px;
+    margin-bottom: 0;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media all and (min-width: 768px){
+    .main-container {  
+        top: 50%;
+    }
+
+    .img-desk{
+        display: block;
+        transform: scale(0.8); 
+    }
+
+    .desk-mon{
+        position: relative;
+        top: -37px;
+        left: -177px;        
+    }
+
+    .desk-box{
+        position: absolute;
+        z-index: 3;
+        top: 145px;
+        left: -120px;
+    }
+    
+    .image-mob{
+        display: none;
+    }
+
+    .container{
+        position: relative;
+        width: 700px;
+        height: 400px;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: -390px;
+        background-position-y: -200px;
+        display: grid;
+        grid-template-columns: 50% 1fr;
+        padding: 0;
+    }
+
+    .images{
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .images::after{
+        content: '';
+        background-image: url(./images/illustration-woman-online-desktop.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;        
+        width: 100%;
+        height: 100%;
+        top: 75px;
+        left: -55px;
+        transform: scale(1.1);
+    }
+        
+    h1{
+        font-weight: 700;
+        text-align: start;
+        font-size: 1.7rem;
+        position: relative;
+        top: -10px;
+        margin: 0;
+    }
+    
+    #accordion{
+        width: 100%;
+        position: relative;
+        top: 10px;
+    }
+
+    .accordion-button{
+        padding: 0.8rem 0;
+    }
+
+    .accordion-button:hover{
+        cursor: pointer;
+        color: var(--text-soft-red);
+    }    
+
+    .card-body {
+        font-size: 0.7rem;
+    }
+
+    .texts{
+        padding: 60px;
+        padding-left: 0;
+    }
+
+    p{
+        padding-bottom: 10px;
+    }
+}
